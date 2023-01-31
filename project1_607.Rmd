@@ -1,0 +1,53 @@
+---
+title: "Untitled"
+author: "waheeb Algabri"
+date: "2023-01-31"
+output: csv_document
+---
+
+
+```{r}
+data <- read.csv( "tournamentinfo.txt" , header = TRUE)
+```
+
+```{r}
+# Load the required packages
+library(dplyr)
+
+# Create a sample data frame of players
+players <- data.frame(Name = c("Gary Hua", "John Doe", "Jane Smith"),
+                      State = c("ON", "NY", "CA"),
+                      Points = c(6.0, 5.0, 7.0),
+                      Pre_Rating = c(1794, 1600, 1800),
+                      Opponent_Avg_Rating = c(1605, 1550, 1700))
+
+# Write the data frame to a .CSV file
+write.csv(players, "players.csv", row.names = FALSE)
+
+```
+
+
+
+```{r}
+# Load libraries
+library(tidyverse)
+
+# Create a dataframe with the first player's information
+player_1 <- data.frame(
+  name = "Gary Hua",
+  state = "ON",
+  total_points = 6.0,
+  pre_rating = 1794,
+  avg_opp_rating = 1605
+)
+
+# Add additional players' information as needed
+
+# Combine all player's information into one dataframe
+all_players <- player_1
+
+# Write the combined dataframe to a .CSV file
+write.csv(all_players, file = "chess_ratings.csv", row.names = FALSE)
+
+```
+
